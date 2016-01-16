@@ -41,4 +41,12 @@
           $this->getServer()->broadcastMessage(TF::YELLOW . $player_name . " was warned by " . $sender_name . " for " . $reason . "!");
           $sender->sendMessage(TF::GREEN . $player_name . " was warned for " . $reason . "!");
 
-       }
+        }
+
+      }
+
+    }
+
+  }
+
+?>
