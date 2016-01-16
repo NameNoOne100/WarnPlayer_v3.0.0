@@ -28,3 +28,17 @@
         $sender_name = $sender->getName();
         $player = $this->getServer()->getPlayer($args[0]);
         $player_name = $player->getName();
+        unset($args[0]);
+        $reason = implode(" ", $args);
+
+        if(!($player instanceof Player)) {
+
+          $sender->sendMessage(TF::RED . "Error: " . $player_name . " was not found.");
+
+        } else {
+
+          $player->sendMessage(TF::RED . "You have been warned by " . $sender_name . " for " . $reason . "!");
+          $this->getServer()->broadcastMessage(TF::YELLOW . $player_name . " was warned by " . $sender_name . " for " . $reason . "!");
+          $sender->sendMessage(TF::GREEN . $player_name . " was warned for " . $reason . "!");
+
+       }
