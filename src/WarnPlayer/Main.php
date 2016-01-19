@@ -8,6 +8,7 @@
   use pocketmine\command\Command;
   use pocketmine\command\CommandSender;
   use pocketmine\command\CommandExecutor;
+  use pocketmine\Player
 
   class Main extends PluginBase implements Listener {
 
