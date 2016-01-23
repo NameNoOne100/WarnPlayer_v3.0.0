@@ -4,11 +4,11 @@
 
   use pocketmine\plugin\PluginBase;
   use pocketmine\event\Listener;
-  use pocketmine\utils\TextFormat as TF;
+  use pocketmine\utils\TexColorormat as Color;
   use pocketmine\command\Command;
   use pocketmine\command\CommandSender;
   use pocketmine\command\CommandExecutor;
-  use pocketmine\Player
+  use pocketmine\Player;
 
   class Main extends PluginBase implements Listener {
 
@@ -24,7 +24,7 @@
 
         if(!(isset($args[0]) and isset($args[1]))) {
 
-          $sender->sendMessage(TF::RED . "Error: not enough args. Usage: /warn <player> <reason>");
+          $sender->sendMessage(Color::RED . "Error: not enough args. Usage: /warn <player> <reason>");
 
         } else {
 
@@ -34,9 +34,9 @@
           unset($args[0]);
           $reason = implode(" ", $args);
 
-          $player->sendMessage(TF::RED . "You have been warned by " . $sender_name . " for " . $reason . "!");
-          $this->getServer()->broadcastMessage(TF::YELLOW . $player_name . " was warned by " . $sender_name . " for " . $reason . "!");
-          $sender->sendMessage(TF::GREEN . $player_name . " was warned for " . $reason . "!");
+          $player->sendMessage(Color::RED . "You have been warned by " . $sender_name . " for " . $reason . "!");
+          $this->getServer()->broadcastMessage(Color::YELLOW . $player_name . " was warned by " . $sender_name . " for " . $reason . "!");
+          $sender->sendMessage(Color::GREEN . $player_name . " was warned for " . $reason . "!");
 
         }
 
